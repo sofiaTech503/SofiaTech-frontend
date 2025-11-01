@@ -1,0 +1,196 @@
+:root{
+  --primary: #0d6efd; /* azul corporativo */
+  --accent: #ff6600;  /* laranja de destaque */
+  --bg: #ffffff;
+  --panel: #f8f9fa;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card-radius: 12px;
+}
+
+/* DARK (toggle) */
+body.dark-mode {
+  --bg: #0f1724;
+  --panel: #0b1220;
+  --text: #e6eef8;
+  --muted: #94a3b8;
+}
+
+/* base */
+html,body,#root{
+  height:100%;
+}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.app-sidebar{
+  width: 240px;
+  background: linear-gradient(180deg, #0b3b8a, #08306b);
+  color: #fff;
+  padding: 1.25rem 0.9rem;
+  flex-shrink:0;
+  box-shadow: 2px 0 8px rgba(2,6,23,0.06);
+}
+.app-sidebar .brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  padding: 0 .3rem 1rem .3rem;
+  margin-bottom: .6rem;
+}
+.brand .logo {
+  width:46px;height:46px;border-radius:9px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;
+}
+.app-sidebar .menu{
+  margin-top: .6rem;
+}
+.app-sidebar .menu button{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  width:100%;
+  padding:.55rem .6rem;
+  border-radius:8px;
+  border:0;
+  background:transparent;
+  color: #eaf2ff;
+  text-align:left;
+  font-weight:600;
+}
+.app-sidebar .menu button:hover{
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}
+.app-sidebar .menu .active{
+  background: rgba(255,255,255,0.12);
+  color:#fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+/* Main area */
+.app-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Navbar */
+.app-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding: .8rem 1.2rem;
+  background: var(--panel);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+body.dark-mode .app-topbar{
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.brand-title{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  font-weight:700;
+  color:var(--text);
+}
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+
+/* Content container */
+.container-main{
+  padding: 1.25rem;
+}
+
+/* CardResumo (small) */
+.card-resumo{
+  border-radius: var(--card-radius);
+  padding: 1rem;
+  background: var(--bg);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15,23,42,0.03);
+}
+body.dark-mode .card-resumo{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: none;
+}
+
+/* cards grid */
+.grid-cards{
+  display:grid;
+  grid-template-columns: repeat(1,1fr);
+  gap:1rem;
+}
+@media(min-width:768px){
+  .grid-cards{ grid-template-columns: repeat(3,1fr); }
+}
+
+/* small table */
+.table-card{
+  width:100%;
+  border-collapse: collapse;
+}
+.table-card th, .table-card td{
+  padding: .6rem .5rem;
+  text-align:left;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  color:var(--muted);
+}
+body.dark-mode .table-card th, body.dark-mode .table-card td{
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* footer small */
+.footer-small{
+  padding: .6rem 1rem;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* utilities */
+.kpi{
+  display:flex;
+  align-items:baseline;
+  gap:.6rem;
+}
+.kpi .value{ font-size:1.6rem; font-weight:700; color:var(--text); }
+.kpi .label{ font-size:.85rem; color:var(--muted); }
+
+/* helper for colored boxes */
+.box-primary{ background: linear-gradient(90deg,var(--primary), #0b5ed7); color:white; border-radius:10px; padding: .8rem; }
+.box-accent{ background: linear-gradient(90deg,var(--accent), #ff8a33); color:white; border-radius:10px; padding:.8rem; }
+
+/* small sparkline (SVG container) */
+.spark {
+  width:120px;
+  height:28px;
+}
+
+/* override bootstrap container padding */
+.container-fluid.custom { padding-left: 1rem; padding-right:1rem; }
+
+/* adjust buttons */
+.btn-ghost {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
