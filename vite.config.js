@@ -7,9 +7,5 @@ export default defineConfig({
   server: {
     port: 5173,
   },
-  resolve: {
-    alias: {
-      'react-is': 'react-is/index.js',
-    },
-  },
+  
 })
