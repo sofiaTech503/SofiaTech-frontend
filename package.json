@@ -4,14 +4,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
+    "prebuild": "chmod +x node_modules/.bin/vite || true",
     "dev": "vite",
+    "start": "vite",
     "build": "vite build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "axios": "^1.12.2",
@@ -26,7 +23,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.4",
-    "rollup": "^4.52.5",
     "vite": "^7.1.11"
   },
   "engines": {
