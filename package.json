@@ -2,12 +2,10 @@
   "name": "frontend",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "prebuild": "chmod +x node_modules/.bin/vite || true",
     "dev": "vite",
-    "start": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
